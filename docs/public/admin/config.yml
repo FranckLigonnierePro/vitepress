@@ -10,43 +10,13 @@ collections:
     label: "Guide"
     folder: "docs/guide"
     create: true
-    slug: "{{slug}}"
+    nested:
+      depth: 3
+    slug: "{{fields.slug}}"
     editor:
       preview: false
     fields:
       - { label: "Title", name: "title", widget: "string" }
       - { label: "Description", name: "description", widget: "string" }
       - { label: "Body", name: "body", widget: "markdown" }
-  - name: "poule"
-    label: "Poule"
-    folder: "docs/guide/poule"
-    create: true
-    slug: "{{slug}}"
-    editor:
-      preview: false
-    fields:
-      - { label: "Title", name: "title", widget: "string" }
-      - { label: "Description", name: "description", widget: "string" }
-      - { label: "Body", name: "body", widget: "markdown" }
-  - name: "coq"
-    label: "Coq"
-    folder: "docs/guide/poule/coq"
-    create: true
-    slug: "{{slug}}"
-    editor:
-      preview: false
-    fields:
-      - { label: "Title", name: "title", widget: "string" }
-      - { label: "Description", name: "description", widget: "string" }
-      - { label: "Body", name: "body", widget: "markdown" }
-  - name: "dinde"
-    label: "Dinde"
-    folder: "docs/guide/dinde"
-    create: true
-    slug: "{{slug}}"
-    editor:
-      preview: false
-    fields:
-      - { label: "Title", name: "title", widget: "string" }
-      - { label: "Description", name: "description", widget: "string" }
-      - { label: "Body", name: "body", widget: "markdown" }
+      - { label: "Slug", name: "slug", widget: "string", required: true }
