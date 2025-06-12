@@ -21,7 +21,6 @@ function generateSidebar(dir, basePath = '') {
     .filter(entry => {
       // On ignore les fichiers cachés et index.md
       if (entry.name.startsWith('.')) return false;
-      if (entry.name === 'index.md') return false;
       
       // On garde les dossiers et les fichiers .md
       return entry.isDirectory() || entry.name.endsWith('.md');
