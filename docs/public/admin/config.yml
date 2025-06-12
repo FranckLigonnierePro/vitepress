@@ -20,4 +20,4 @@ collections:
       - { label: "Description", name: "description", widget: "string", required: false }
       - { label: "Corps", name: "body", widget: "markdown" }
     # moving an existing entry will move the entire sub tree of the entry to the new location
-    meta: { path: { widget: string, label: 'Path', index_file: 'index' } }
+    meta: { path: { widget: string, label: 'Path', index_file: '{{slug}}' } }
