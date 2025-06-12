@@ -1,3 +1,25 @@
+import fs from 'fs';
+import path from 'path';
+
+function getGuideSidebar() {
+  const guideDir = path.resolve(__dirname, '../guide');
+  const files = fs.readdirSync(guideDir)
+    .filter(f => f.endsWith('.md') && f !== 'index.md')
+    .map(f => {
+      const name = f.replace('.md', '');
+      return {
+        text: name.charAt(0).toUpperCase() + name.slice(1),
+        link: `/guide/${name}`
+      };
+    });
+  return [
+    {
+      text: 'Guide',
+      items: files
+    }
+  ];
+}
+
 export default {
   themeConfig: {
     nav: [
@@ -6,18 +28,7 @@ export default {
       { text: 'Référence', link: '/reference/' }
     ],
     sidebar: {
-      '/guide/': [
-        {
-          text: 'Guide',
-          items: [
-            { text: 'Logo', link: '/guide/logo' },
-            { text: 'Couleur', link: '/guide/couleur' },
-            { text: 'Typographie', link: '/guide/typographie' },
-            { text: 'Bouton', link: '/guide/bouton' },
-            { text: 'Statut', link: '/guide/statut' },
-          ]
-        }
-      ],
+      '/guide/': getGuideSidebar(),
       '/reference/': [
         {
           text: 'Référence',
