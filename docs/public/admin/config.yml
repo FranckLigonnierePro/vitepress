@@ -9,17 +9,19 @@ collections:
   - name: "guide"
     label: "Guide"
     folder: "docs/guide"
-    nested:
-      depth: 100
     create: true
-    # Ici on ajoute le champ `path_folder` dans le slug pour l’injecter dans le chemin du fichier
-    path: "{{fields.path_folder}}/{{slug}}"
-    slug: "{{slug}}"
-    preview_path: "/guide/{{fields.path_folder}}/{{slug}}"
+    slug: "{{fields.full_path}}"  # Le slug contient tout le chemin relatif + slug final
+    preview_path: "/guide/{{fields.full_path}}"
     editor:
       preview: false
     fields:
-      - { label: "Dossier", name: "path_folder", widget: "string", hint: "Ex: frontend/vuejs" }
+      - {
+          label: "Chemin complet (dossier/slug)",
+          name: "full_path",
+          widget: "string",
+          hint: "Ex: backend/express/mon-guide (pas d’extension .md, pas de slash au début)"
+        }
       - { label: "Titre", name: "title", widget: "string" }
       - { label: "Description", name: "description", widget: "string", required: false }
       - { label: "Corps", name: "body", widget: "markdown" }
+
