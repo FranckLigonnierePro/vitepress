@@ -24,9 +24,3 @@ collections:
       - { label: "Description", name: "description", widget: "string", required: false }
       - { label: "Catégorie", name: "category", widget: "select", options: ["frontend", "backend", "design"] }
       - { label: "Corps", name: "body", widget: "markdown" }
-      - { label: "Chemin du fichier", name: "path", widget: "hidden", default: "{{fields.category}}/{{slug}}" }
-    meta: 
-      path: 
-        widget: string
-        label: 'Chemin du fichier'
-        index_file: 'index'
