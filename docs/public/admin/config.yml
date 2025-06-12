@@ -19,27 +19,18 @@ collections:
       - { label: "Description", name: "description", widget: "string", required: false }
       - { label: "Corps", name: "body", widget: "markdown" }
       - { label: "Chemin du fichier", name: "path", widget: "hidden", default: "{{slug}}" }
-      
-  - name: "sous_dossiers"
-    label: "Sous-dossiers"
-    files:
-      - label: "Poule"
-        name: "poule"
-        file: "docs/guide/poule/.keep"
-        fields:
-          - { label: "Titre", name: "title", widget: "hidden", default: "Poule" }
-          - { label: "Body", name: "body", widget: "hidden", default: "" }
-          
-      - label: "Poule > Coq"
-        name: "poule_coq"
-        file: "docs/guide/poule/coq/.keep"
-        fields:
-          - { label: "Titre", name: "title", widget: "hidden", default: "Coq" }
-          - { label: "Body", name: "body", widget: "hidden", default: "" }
-          
-      - label: "Dinde"
-        name: "dinde"
-        file: "docs/guide/dinde/.keep"
-        fields:
-          - { label: "Titre", name: "title", widget: "hidden", default: "Dinde" }
-          - { label: "Body", name: "body", widget: "hidden", default: "" }
+
+  # Exemple d'une collection avec sous-dossiers
+  - name: "sous-guides"
+    label: "Sous-guides"
+    folder: "docs/guide/sous-guides"
+    create: true
+    slug: "{{slug}}"
+    preview_path: "/guide/sous-guides/{{slug}}"
+    editor:
+      preview: false
+    fields:
+      - { label: "Titre", name: "title", widget: "string" }
+      - { label: "Description", name: "description", widget: "string", required: false }
+      - { label: "Corps", name: "body", widget: "markdown" }
+      - { label: "Chemin du fichier", name: "path", widget: "hidden", default: "{{slug}}" }
