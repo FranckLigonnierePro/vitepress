@@ -10,6 +10,9 @@ collections:
     label: "Guide"
     folder: "docs/guide"
     create: true
+    nested:
+      depth: 100 # max depth to show in the collection tree
+      summary: '{{title}}' 
     slug: "{{slug}}"
     preview_path: "/guide/{{slug}}"
     editor:
@@ -21,16 +24,3 @@ collections:
       - { label: "Chemin du fichier", name: "path", widget: "hidden", default: "{{slug}}" }
 
   # Exemple d'une collection avec sous-dossiers
-  - name: "sous-guides"
-    label: "Sous-guides"
-    folder: "docs/guide/sous-guides"
-    create: true
-    slug: "{{slug}}"
-    preview_path: "/guide/sous-guides/{{slug}}"
-    editor:
-      preview: false
-    fields:
-      - { label: "Titre", name: "title", widget: "string" }
-      - { label: "Description", name: "description", widget: "string", required: false }
-      - { label: "Corps", name: "body", widget: "markdown" }
-      - { label: "Chemin du fichier", name: "path", widget: "hidden", default: "{{slug}}" }
