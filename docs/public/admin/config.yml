@@ -10,7 +10,7 @@ collections:
     label: "Guide"
     folder: "docs/guide"
     create: true
-    slug: "{{fields.path_folder}}/{{slug}}"  # On injecte ici le chemin complet
+    slug: "{{fields.path_folder}}{{slug}}"  # On injecte ici le chemin complet
     preview_path: "/guide/{{fields.path_folder}}/{{slug}}"
     editor:
       preview: false
