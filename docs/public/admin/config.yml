@@ -9,9 +9,11 @@ collections:
   - name: "guide"
     label: "Guide"
     folder: "docs/guide"
+    nested: true
     create: true
     # Ici on ajoute le champ `path_folder` dans le slug pour l’injecter dans le chemin du fichier
-    slug: "{{fields.path_folder}}/{{slug}}"
+    path: "{{fields.path_folder}}/{{slug}}"
+    slug: "{{slug}}"
     preview_path: "/guide/{{fields.path_folder}}/{{slug}}"
     editor:
       preview: false
