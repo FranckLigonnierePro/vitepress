@@ -28,4 +28,4 @@ collections:
       path:
         widget: string
         label: 'Chemin du fichier (ex: sous-dossier/mon-article)'
-        index_file: 'index'
+        index_file: '{{slug}}'
