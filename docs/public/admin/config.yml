@@ -10,13 +10,19 @@ collections:
     label: "Guide"
     folder: "docs/guide"
     create: true
-    # Ici on ajoute le champ `path_folder` dans le slug pour l’injecter dans le chemin du fichier
-    slug: "{{fields.path_folder}}/{{slug}}"
     preview_path: "/guide/{{fields.path_folder}}/{{slug}}"
     editor:
       preview: false
     fields:
-      - { label: "Dossier", name: "path_folder", widget: "string", hint: "Ex: frontend/vuejs" }
+      - { label: "Dossier", name: "path_folder", widget: "string", hint: "Ex: frontend/vuejs (pas de slash à la fin)", required: true }
       - { label: "Titre", name: "title", widget: "string" }
       - { label: "Description", name: "description", widget: "string", required: false }
       - { label: "Corps", name: "body", widget: "markdown" }
+      - {
+          label: "Chemin du fichier",
+          name: "path",
+          widget: "hidden",
+          default: "{{fields.path_folder}}/{{slug}}"
+        }
+    path: "{{fields.path_folder}}/{{slug}}"
+    slug: "{{slug}}"
