@@ -1,0 +1,1 @@
+import{_ as a,c as t,o,ae as r}from"./chunks/framework.BtEkjhVd.js";const g=JSON.parse('{"title":"Logo","description":"","frontmatter":{},"headers":[],"relativePath":"guide/logo.md","filePath":"guide/logo.md"}'),n={name:"guide/logo.md"};function i(l,e,s,d,p,u){return o(),t("div",null,e[0]||(e[0]=[r("",12)]))}const h=a(n,[["render",i]]);export{g as __pageData,h as default};
