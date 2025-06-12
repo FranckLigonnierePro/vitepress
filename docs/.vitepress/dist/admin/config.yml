@@ -1,0 +1,29 @@
+backend:
+  name: git-gateway
+  branch: main
+
+media_folder: "public/img"
+public_folder: "/img"
+
+collections:
+  - name: "guide"
+    label: "Guide"
+    label_singular: "Article"
+    folder: "docs/guide"
+    create: true
+    nested:
+      depth: 100
+      summary: '{{title}}'
+    slug: "{{slug}}"
+    preview_path: "/guide/{{slug}}"
+    editor:
+      preview: false
+    fields:
+      - { label: "Titre", name: "title", widget: "string" }
+      - { label: "Description", name: "description", widget: "string", required: false }
+      - { label: "Corps", name: "body", widget: "markdown" }
+    meta: 
+      path: 
+        widget: string
+        label: 'Chemin du fichier'
+        index_file: 'index'
