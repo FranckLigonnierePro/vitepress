@@ -8,24 +8,15 @@ public_folder: "/img"
 collections:
   - name: "guide"
     label: "Guide"
-    label_singular: "Article"
     folder: "docs/guide"
     create: true
     slug: "{{slug}}"
-    preview_path: "/guide/{{fields.category}}/{{slug}}"
-    nested:
-      depth: 100
-      subfolder: "false"
-      summary: '{{title}}'
+    preview_path: "/guide/{{fields.path_folder}}/{{slug}}"
     editor:
       preview: false
     fields:
+      - { label: "Dossier", name: "path_folder", widget: "string", hint: "Exemple : frontend/vuejs ou backend/node", required: true }
       - { label: "Titre", name: "title", widget: "string" }
       - { label: "Description", name: "description", widget: "string", required: false }
-      - { label: "Catégorie", name: "category", widget: "select", options: ["frontend", "backend", "design"] }
       - { label: "Corps", name: "body", widget: "markdown" }
-    meta:
-      path:
-        widget: string
-        label: 'Chemin du fichier (ex: sous-dossier/mon-article)'
-        index_file: '{{slug}}'
+      - { label: "Chemin du fichier", name: "path", widget: "hidden", default: "{{fields.path_folder}}/{{slug}}" }
