@@ -1,5 +1,5 @@
 [build]
-  command = "npx vitepress build"
+  command = "npm run build && npm run postbuild"
   publish = "docs/.vitepress/dist"
 
 [context.production.environment]

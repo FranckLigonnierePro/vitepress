@@ -5,6 +5,7 @@
   "scripts": {
     "dev": "vitepress dev docs",
     "build": "vitepress build docs",
+    "postbuild": "cp -r docs/public/admin docs/.vitepress/dist/admin",
     "serve": "vitepress serve docs",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
