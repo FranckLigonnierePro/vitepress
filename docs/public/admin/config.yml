@@ -8,11 +8,12 @@ public_folder: "/img"
 collections:
   - name: "guide"
     label: "Guide"
+    label_singular: "Article"
     folder: "docs/guide"
     create: true
     nested:
-      depth: 100 # max depth to show in the collection tree
-      summary: '{{title}}' 
+      depth: 100
+      summary: '{{title}}'
     slug: "{{slug}}"
     preview_path: "/guide/{{slug}}"
     editor:
@@ -21,6 +22,8 @@ collections:
       - { label: "Titre", name: "title", widget: "string" }
       - { label: "Description", name: "description", widget: "string", required: false }
       - { label: "Corps", name: "body", widget: "markdown" }
-      - { label: "Chemin du fichier", name: "path", widget: "hidden", default: "{{slug}}" }
-
-  # Exemple d'une collection avec sous-dossiers
+    meta: 
+      path: 
+        widget: string
+        label: 'Chemin du fichier'
+        index_file: 'index'
